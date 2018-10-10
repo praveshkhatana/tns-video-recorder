@@ -1,5 +1,5 @@
 {
-  "name": "nativescript-video-recorder",
+  "name": "tns-video-recorder",
   "version": "0.1.0",
   "description": "Video Recorder NativeScript plugin.",
   "main": "video-recorder",
@@ -22,7 +22,7 @@
     "demo.ios": "npm run tsc && cd ../demo && tns run ios --syncAllFiles --emulator",
     "demo.android": "npm run tsc && cd ../demo && tns run android --syncAllFiles --emulator",
     "demo.reset": "cd ../demo && npx rimraf -- hooks node_modules platforms package-lock.json",
-    "plugin.prepare": "npm run build && cd ../demo && tns plugin remove nativescript-video-recorder && tns plugin add ../src",
+    "plugin.prepare": "npm run build && cd ../demo && tns plugin remove tns-video-recorder && tns plugin add ../src",
     "clean": "npm run demo.reset && npx rimraf -- node_modules package-lock.json && npm i",
     "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'",
     "prepack": "npm run build.native"
@@ -38,10 +38,10 @@
     "email": "pravesh.khatana@gmail.com"
   },
   "bugs": {
-    "url": "https://github.com/praveshkhatana/nativescript-video-recorder/issues"
+    "url": "https://github.com/praveshkhatana/tns-video-recorder/issues"
   },
   "license": "Apache-2.0",
-  "homepage": "https://github.com/praveshkhatana/nativescript-video-recorder",
+  "homepage": "https://github.com/praveshkhatana/tns-video-recorder",
   "readmeFilename": "README.md",
   "devDependencies": {
     "tns-core-modules": "^4.2.0",

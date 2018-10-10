@@ -3,7 +3,7 @@
 
 import { Component } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router/router-extensions";
-import { VideoRecorder } from "nativescript-video-recorder";
+import { VideoRecorder } from "tns-video-recorder";
 import * as permissions from "nativescript-permissions";
 import { ListPicker } from "ui/list-picker";
 import { isAndroid } from "tns-core-modules/ui/page/page";

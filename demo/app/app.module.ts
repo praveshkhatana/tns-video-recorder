@@ -9,7 +9,7 @@ import { PropertyComponent } from "./property/property.component";
 import { PreviewComponent } from './preview/preview.component';
 
 // Register VideoView element for camera view
-var VideoView = require('nativescript-video-recorder/video-recorder').VideoView;
+var VideoView = require('tns-video-recorder/video-recorder').VideoView;
 registerElement("VideoView", () => {
     return <any>VideoView;
 });
