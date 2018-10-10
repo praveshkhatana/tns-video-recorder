@@ -1,0 +1,43 @@
+{
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "readme": "NativeScript Application",
+  "repository": "<fill-your-repository-here>",
+  "nativescript": {
+    "id": "org.nativescript.VideoRecorderDemo",
+    "tns-android": {
+      "version": "4.2.0"
+    },
+    "tns-ios": {
+      "version": "4.2.0"
+    }
+  },
+  "dependencies": {
+    "@angular/animations": "~6.1.0",
+    "@angular/common": "~6.1.0",
+    "@angular/compiler": "~6.1.0",
+    "@angular/core": "~6.1.0",
+    "@angular/forms": "~6.1.0",
+    "@angular/http": "~6.1.0",
+    "@angular/platform-browser": "~6.1.0",
+    "@angular/platform-browser-dynamic": "~6.1.0",
+    "@angular/router": "~6.1.0",
+    "nativescript-angular": "~6.1.0",
+    "nativescript-permissions": "^1.2.3",
+    "nativescript-theme-core": "~1.0.4",
+    "nativescript-video-recorder": "file:../src",
+    "reflect-metadata": "~0.1.8",
+    "rxjs": "^6.0.0",
+    "tns-core-modules": "^4.2.0",
+    "zone.js": "~0.8.18"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "lazy": "1.0.11",
+    "nativescript-dev-typescript": "~0.6.0",
+    "tns-platform-declarations": "^4.2.0",
+    "typescript": "~2.8.2"
+  }
+}

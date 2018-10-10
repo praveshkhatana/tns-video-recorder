@@ -1,0 +1,18 @@
+<ActionBar title="Properties" class="action-bar"></ActionBar>
+<!-- Your UI components go here -->
+
+<ScrollView>
+    <StackLayout>
+        <Label text="Camera" class="h3 text-left"></Label>
+        <ListPicker [items]="cameras" [selectedIndex]="selectedCameraIndex" (selectedIndexChange)="onCameraSelect($event)"></ListPicker>
+        <Label text="Output Format" class="h3 text-left"></Label>
+        <ListPicker [items]="outputFormats" [selectedIndex]="selectedOutputFormatIndex" (selectedIndexChange)="onOutputFormatSelect($event)"></ListPicker>
+        <Label text="Profile" class="h3 text-left"></Label>
+        <ListPicker [items]="profiles" [selectedIndex]="selectedProfileIndex" (selectedIndexChange)="onProfileSelect($event)"></ListPicker>
+        <Label text="Directory" class="h3 text-left"></Label>
+        <TextField hint="Directory path" [(ngModel)]="dir" editable="false" textWrap="true"></TextField>
+        <Label text="File" class="h3 text-left"></Label>
+        <TextField hint="File path" [(ngModel)]="file"></TextField>
+        <Button text="Start Preview" (tap)="startPreview()"></Button>
+    </StackLayout>
+</ScrollView>

@@ -1,0 +1,23 @@
+<ActionBar title="Preview" class="action-bar"></ActionBar>
+
+<AbsoluteLayout>
+    <VideoView width="100%" height="100%" (available)="onVideoViewAvailable($event)" #videoView></VideoView>
+    <Button 
+        [text]="recording && recording.state === 'NOT_RECORDING' ? 'Start' : 'Stop'" 
+        (tap)="toggleRecording()" 
+        [top]="screenHeight - 150" 
+        [left]="10"></Button>
+    <Button 
+        *ngIf="recording && recording.state !== 'NOT_RECORDING'"
+        [text]="recording && recording.state === 'PAUSED' ? 'Resume' : 'Pause'" 
+        (tap)="togglePause()" 
+        [top]="screenHeight - 150" 
+        [left]="100"></Button>
+
+    <Button 
+        *ngIf="recording && recording.state === 'NOT_RECORDING'"
+        text="Switch" 
+        (tap)="switchCamera()" 
+        [top]="screenHeight - 150" 
+        [left]="200"></Button>
+</AbsoluteLayout>
