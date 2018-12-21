@@ -86,6 +86,7 @@ export class VideoRecording {
   public state: RECORDING_STATE;
   private captureSession: AVCaptureSession;
   private movieFileOutput: AVCaptureMovieFileOutput;
+  private connection: AVCaptureConnection;
   public thumbnailCount: number;
   public thumbnails: string[];
 
@@ -127,8 +128,17 @@ export class VideoRecording {
       if (this.captureSession.canAddInput(audioDeviceInput) === true) {
         this.captureSession.addInput(audioDeviceInput);
       }
+      let opts: NSDictionary<string, any> = NSDictionary.dictionaryWithObjectForKey(AVVideoCodecTypeH264, AVVideoCodecKey);
 
       this.movieFileOutput = AVCaptureMovieFileOutput.new();
+      this.connection = this.movieFileOutput.connectionWithMediaType(AVMediaTypeVideo);
+
+
+      if (this.movieFileOutput.availableVideoCodecTypes.containsObject(AVVideoCodecTypeH264)) {
+
+        this.movieFileOutput.setOutputSettingsForConnection(opts, this.connection);
+      }
+
 
       if (this.captureSession.canAddOutput(this.movieFileOutput) === true) {
         this.captureSession.addOutput(this.movieFileOutput);
@@ -162,6 +172,11 @@ export class VideoRecording {
   }
 
   start() {
+    let opts: NSDictionary<string, any> = NSDictionary.dictionaryWithObjectForKey(AVVideoCodecTypeH264, AVVideoCodecKey);
+    this.connection = this.movieFileOutput.connectionWithMediaType(AVMediaTypeVideo);
+    if (this.movieFileOutput.availableVideoCodecTypes.containsObject(AVVideoCodecTypeH264)) {
+      this.movieFileOutput.setOutputSettingsForConnection(opts, this.connection);
+    }
     this.movieFileOutput.startRecordingToOutputFileURLRecordingDelegate(
       NSURL.URLWithString("file://" + this.file),
       new CaptureDelegate()

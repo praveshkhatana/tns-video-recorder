@@ -1,6 +1,6 @@
 {
   "name": "tns-video-recorder",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Video Recorder NativeScript plugin.",
   "main": "video-recorder",
   "typings": "index.d.ts",
@@ -19,7 +19,7 @@
     "test.ios": "npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
     "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
     "plugin.tscwatch": "npm run tsc -- -w",
-    "demo.ios": "npm run tsc && cd ../demo && tns run ios --syncAllFiles --emulator",
+    "demo.ios": "npm run tsc && cd ../demo && tns run ios --syncAllFiles",
     "demo.android": "npm run tsc && cd ../demo && tns run android --syncAllFiles --emulator",
     "demo.reset": "cd ../demo && npx rimraf -- hooks node_modules platforms package-lock.json",
     "plugin.prepare": "npm run build && cd ../demo && tns plugin remove tns-video-recorder && tns plugin add ../src",
